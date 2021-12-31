@@ -1,0 +1,134 @@
+:root{
+    --yellow:#ffa500;
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none; border:none;
+    text-transform: capitalize;
+    transition:all .2s linear;
+}
+
+h1, h3{
+    font-family: 'Oswald', sans-serif;
+}
+
+
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body{
+    overflow-x: hidden;
+    height:200rem;
+}
+html::-webkit-scrollbar{
+    width:1.5rem;
+}
+
+html::-webkit-scrollbar-track{
+    background:#333;
+}
+
+html::-webkit-scrollbar-thumb{
+    background:var(--yellow);
+}
+header{
+    position: fixed;
+    height: 10rem;
+    top:0; left:0;
+    z-index: 100;
+    width:100%;
+    background:black;
+    padding:1.5rem 10%;
+    box-shadow: 0 .3rem 2rem rgba(0,0,0,.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo img{
+    height:8rem;
+}
+header .navbar ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+header .navbar ul li{
+    margin-left: 3rem;
+}
+header .navbar ul li a{
+    font-size:2.5rem;
+    color:yellow;
+}
+header .navbar ul li a.active,
+header .navbar ul li a:hover{
+    color:var(--yellow);
+    border-bottom: 3px solid #ffa500;
+}
+header #menu-bar{
+    font-size: 3rem;
+    color:var(--yellow);
+    cursor: pointer;
+    display: none;
+  
+}
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+}
+
+@media (max-width:768px){
+    header #menu-bar{
+        display: block;
+    }
+    header .navbar{
+        position: fixed;
+        top:8rem; left:0;
+        width:100%;
+        background:var(--yellow);
+        border-top: .2rem solid rgba(0,0,0,.1);
+        transform:scaleY(0);
+        transform-origin: top;
+        opacity: 0;
+    }
+    header .navbar ul{
+        flex-flow: column;
+        padding:2rem;
+    }
+    header .navbar ul li{
+        margin:2rem;
+        width: 100%;
+    }
+    header .navbar ul li a{
+        display: block;
+        color:#fff;
+        padding-left: 2rem;
+        border-left: .2rem solid #fff;
+        font-size: 2rem;
+    }
+    header .navbar ul li a:hover,
+    header .navbar ul li a.active{
+        color:black;
+        
+    
+    }
+    header .navbar.nav-toggle{
+        transform:scaleY(1);
+        opacity: 1;
+    }
+}
+@media (max-width:500px){
+    html{
+        font-size: 50%;
+    }
+}
